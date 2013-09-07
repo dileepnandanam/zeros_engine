@@ -1,4 +1,7 @@
 ZerosEngine::Application.routes.draw do
+  get "sessions/new"
+  post "sessions/create"
+  delete "sessions/destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

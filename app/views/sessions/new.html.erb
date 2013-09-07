@@ -1,0 +1,6 @@
+<h1><%= current_user.login if current_user %></h1>
+<%= form_for :sessions, url: sessions_create_path do %>
+	<%= text_field_tag :login %>
+	<%= text_field_tag :password %>
+	<%= submit_tag %>
+<% end %>

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   protected
   def create_password
     self.salt = Digest::SHA1.hexdigest("#{login}--#{Time.now}")
+    self.remember_token = SecureRandom.base64
     self.password = Digest::SHA1.hexdigest("#{new_password} #{salt}")
     self.save
   end
